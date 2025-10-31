@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { extractText, extractTextCloud, saveText } from "./services/api";
+import { extractText, extractTextCloud, saveText, API_BASE } from "./services/api";
 import { useTheme } from "./hooks/useTheme";
 import Header from "./components/Header/Header";
 import LoaderBar from "./components/LoaderBar/LoaderBar";
@@ -87,7 +87,6 @@ export default function App() {
     }
   };
 
-
   /** 💾 Guardar y descargar **/
   const handleSaveAll = async () => {
     if (!extractedText.trim()) return setMsg("No hay texto para guardar.");
@@ -96,16 +95,16 @@ export default function App() {
       const result = await saveText(extractedText, mimeStr);
       if (result?.saved && result?.txt_path) {
         const filename = result.txt_path.split("/").pop();
-        const baseUrl =
-          import.meta.env.VITE_API_BASE?.replace(/\/$/, "") || "http://127.0.0.1:8000";
         const link = document.createElement("a");
-        link.href = `${baseUrl}/api/download/${filename}`;
+        link.href = `${API_BASE}/api/download/${filename}`;
         link.download = filename || "texto_extraido.txt";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         setMsg("💾 Archivo descargado correctamente.");
-      } else setMsg("⚠️ No se pudo obtener el archivo para descargar.");
+      } else {
+        setMsg("⚠️ No se pudo obtener el archivo para descargar.");
+      }
     } catch {
       setMsg("⚠️ Error al registrar o descargar archivo.");
     }

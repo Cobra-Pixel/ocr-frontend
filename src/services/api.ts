@@ -1,23 +1,19 @@
-// Llamadas a FastAPI (OCR y guardar)
+// src/services/api.ts
 import axios from "axios";
 
-// Muestra la URL en consola para verificar conexión
-console.log("🌐 API Base URL:", import.meta.env.VITE_API_URL);
+// 🔧 Usa siempre la URL de producción del backend (Render)
+const API_BASE = (import.meta.env.VITE_API_BASE || "https://ocr-backend-deploy.onrender.com").replace(/\/$/, "");
 
-// Lee la URL base desde .env
-const API_BASE = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-//const API_BASE = import.meta.env.VITE_API_BASE || "http://127.0.0.1:8000";
-// Instancia principal de axios
+// Instancia principal
 const api = axios.create({
   baseURL: API_BASE,
-  headers: { "Content-Type": "multipart/form-data" },
 });
 
 // OCR normal (EasyOCR + Tesseract)
 export const extractText = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
-  const { data } = await api.post("/api/ocr", formData);
+  const { data } = await api.post("/api/ocr/", formData); // 🔹 barra final
   return data;
 };
 
@@ -25,7 +21,7 @@ export const extractText = async (file: File) => {
 export const extractTextCloud = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
-  const { data } = await api.post("/api/ocr/cloud", formData);
+  const { data } = await api.post("/api/ocr/cloud/", formData); // 🔹 barra final
   return data;
 };
 
@@ -34,6 +30,8 @@ export const saveText = async (text: string, mimeTypes: string) => {
   const formData = new FormData();
   formData.append("text", text);
   formData.append("image_mime", mimeTypes);
-  const { data } = await api.post("/api/save", formData);
+  const { data } = await api.post("/api/save/", formData); // 🔹 barra final
   return data;
 };
+
+export { API_BASE };
