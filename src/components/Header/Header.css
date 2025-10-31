@@ -1,0 +1,27 @@
+.app-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  user-select: none;
+}
+
+/* Botón de cambio de tema */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}

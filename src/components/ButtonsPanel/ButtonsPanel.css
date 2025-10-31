@@ -1,0 +1,55 @@
+.buttons-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.file-input-hidden {
+  display: none;
+}
+
+.btn {
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  color: #fff;
+}
+
+/* Tipos de botón */
+.btn-primary {
+  background: #1976d2;
+  border-color: #1976d2;
+}
+
+.btn-cloud {
+  background: #2096f7;
+  border-color: #2196f7;
+}
+
+.btn-ghost {
+  background: #a92222;
+  border: 1px solid #555;
+}
+
+.btn-success {
+  background: #2e7d32;
+  border-color: #2e7d32;
+}
+
+/* Efectos */
+.btn:hover:not(:disabled) {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

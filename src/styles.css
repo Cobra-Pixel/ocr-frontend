@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #0b1220; /* color base dark */
+  color: #e8eefc; /* texto base claro */
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* === Responsive global para el layout principal === */
+.content-area {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* 🔧 Responsive: pantallas pequeñas (móvil / tablet) */
+@media (max-width: 900px) {
+  .content-area {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    gap: 20px !important;
+    overflow-y: auto !important;
+  }
+
+  .content-area > * {
+    width: 95% !important;
+    max-width: 600px !important;
+  }
+
+  textarea, pre {
+    font-size: 14px !important;
+    width: 100% !important;
+    min-height: 300px !important;
+  }
+}

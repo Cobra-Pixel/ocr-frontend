@@ -1,0 +1,20 @@
+.instructions-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.instructions-btn {
+  background: #b61d1d;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.instructions-btn:hover {
+  background: #a61a1a;
+  transform: scale(1.05);
+}
