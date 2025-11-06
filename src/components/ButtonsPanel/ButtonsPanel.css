@@ -1,16 +1,39 @@
+/* ============================================================
+styles/buttons.css — Estilos para panel de botones y carga
+===============================================================
+Define la apariencia y comportamiento de los botones principales
+de la interfaz, así como estilos generales del contenedor.
+Incluye variantes para acciones locales, nube, éxito y cancelación.
+============================================================ */
+
+/*Panel contenedor de botones
+---------------------------------------------------------------
+Alinea los botones horizontalmente y permite que se ajusten en
+pantallas pequeñas (flex-wrap).
+*/
 .buttons-panel {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px;               /* Espaciado entre botones */
   padding: 16px 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: center; /* Centra horizontalmente */
+  flex-wrap: wrap;         /* Permite salto de línea en móvil */
 }
 
+/*Ocultar input de archivo
+---------------------------------------------------------------
+Se usa junto con un botón personalizado para seleccionar imágenes.
+*/
 .file-input-hidden {
   display: none;
 }
 
+/* ============================================================
+Clase base de botones
+---------------------------------------------------------------
+Define estilo general de todos los botones:
+altura, forma, fuente, transiciones y color de texto.
+============================================================ */
 .btn {
   height: 40px;
   border-radius: 10px;
@@ -19,36 +42,52 @@
   cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.25s ease;
-  color: #fff;
+  color: #fff;             /* Texto blanco por defecto */
 }
 
-/* Tipos de botón */
+/* ============================================================
+Variantes de color por tipo de acción
+---------------------------------------------------------------
+Cada tipo de botón representa una acción diferente.
+============================================================ */
+
+/* Acción principal (por ejemplo: procesar OCR local) */
 .btn-primary {
   background: #1976d2;
   border-color: #1976d2;
 }
 
+/* Acción en la nube (OCR.Space u otros servicios externos) */
 .btn-cloud {
   background: #2096f7;
   border-color: #2196f7;
 }
 
+/* Botón alternativo o de cancelación */
 .btn-ghost {
   background: #a92222;
   border: 1px solid #555;
 }
 
+/* Acción de confirmación o éxito */
 .btn-success {
   background: #2e7d32;
   border-color: #2e7d32;
 }
 
-/* Efectos */
+/* ============================================================
+🔹 Efectos visuales e interacciones
+---------------------------------------------------------------
+Incluye animación de escala al pasar el cursor y estilo deshabilitado.
+============================================================ */
+
+/* Efecto hover: agranda ligeramente y reduce opacidad */
 .btn:hover:not(:disabled) {
   transform: scale(1.03);
   opacity: 0.9;
 }
 
+/* Estado deshabilitado: bloquea interacción visual */
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;

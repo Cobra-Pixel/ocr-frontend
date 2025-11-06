@@ -1,47 +1,101 @@
+/* ============================================================
+ImagePreview.css — Estilos del panel de vista previa de imagen
+===============================================================
+Este módulo define los estilos visuales del panel donde se
+muestra la imagen seleccionada para procesar con OCR.
+Incluye:
+  - Contenedor principal
+  - Marco de imagen / vista previa
+  - Mensajes cuando no hay imagen
+  - GIF decorativo animado
+============================================================ */
+
+
+/* ============================================================
+Contenedor principal
+---------------------------------------------------------------
+Define el bloque visual general del panel de vista previa.
+============================================================ */
 .image-preview-container {
-  border-radius: 14px;
-  padding: 14px;
-  display: flex;
+  border-radius: 14px;           /* Bordes suaves y redondeados */
+  padding: 14px;                 /* Espaciado interno */
+  display: flex;                 /* Diseño flexible vertical */
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box;        /* Incluye padding en el cálculo del tamaño */
 }
 
+
+/* ============================================================
+Título del panel
+---------------------------------------------------------------
+Texto descriptivo encima del área de imagen.
+============================================================ */
 .image-preview-title {
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.8;                  /* Tono semitransparente para suavidad */
   margin-bottom: 8px;
 }
 
+
+/* ============================================================
+Marco de la vista previa
+---------------------------------------------------------------
+Área contenedora de la imagen. Mantiene proporción 4:3.
+============================================================ */
 .image-preview-frame {
   border-radius: 12px;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3;           /* Relación de aspecto fija */
   display: grid;
-  place-items: center;
-  overflow: hidden;
+  place-items: center;           /* Centra la imagen o texto */
+  overflow: hidden;              /* Oculta el exceso de imagen */
 }
 
+
+/* ============================================================
+Imagen mostrada
+---------------------------------------------------------------
+La imagen cargada se ajusta completamente al contenedor.
+============================================================ */
 .image-preview-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: contain;           /* Mantiene proporciones originales */
 }
 
+
+/* ============================================================
+Estado vacío (sin imagen)
+---------------------------------------------------------------
+Texto que aparece cuando no hay imagen seleccionada.
+============================================================ */
 .image-preview-empty {
   opacity: 0.6;
   font-size: 14px;
   text-align: center;
 }
 
+
+/* ============================================================
+Tipos de archivo mostrados
+---------------------------------------------------------------
+Pequeña línea que indica el formato o tipo de imagen cargado.
+============================================================ */
 .image-preview-types {
   margin-top: 10px;
   font-size: 12px;
   opacity: 0.75;
-  word-break: break-all;
+  word-break: break-all;         /* Permite dividir nombres largos */
 }
 
-/* GIF decorativo */
+
+/* ============================================================
+GIF decorativo (opcional)
+---------------------------------------------------------------
+Permite mostrar un GIF animado o ilustrativo debajo del área
+de vista previa, centrado y con sombra.
+============================================================ */
 .image-preview-gif {
   display: flex;
   justify-content: center;
@@ -49,16 +103,20 @@
   padding-top: 16px;
 }
 
+
+/* Imagen del GIF decorativo */
 .image-preview-gif-img {
   width: 420px;
   height: auto;
   max-height: 300px;
   object-fit: contain;
   border-radius: 10px;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6)); /* Efecto de sombra */
+  transition: transform 0.3s ease;                 /* Animación suave al hover */
 }
 
+
+/* Efecto hover sobre el GIF */
 .image-preview-gif-img:hover {
-  transform: scale(1.03);
+  transform: scale(1.03);         /* Ligero aumento para efecto dinámico */
 }

@@ -1,20 +1,51 @@
+/* ============================================================
+📄 Instructions.css — Estilos para sección de instrucciones
+===============================================================
+Este módulo define la apariencia de la sección que muestra
+o activa instrucciones, tutoriales o ayudas interactivas
+dentro de la aplicación OCR Extractor.
+Incluye:
+  - Contenedor general
+  - Botón principal de instrucciones
+============================================================ */
+
+
+/* ============================================================
+🔹 Contenedor principal
+---------------------------------------------------------------
+Centrado horizontalmente, con separación del contenido superior.
+============================================================ */
 .instructions-container {
-  text-align: center;
-  margin-bottom: 10px;
+  text-align: center;    /* Centra el contenido del bloque */
+  margin-bottom: 10px;   /* Espaciado inferior respecto al panel siguiente */
 }
 
+
+/* ============================================================
+🔹 Botón principal de instrucciones
+---------------------------------------------------------------
+Estilo llamativo con color rojo principal, bordes redondeados
+y sombra ligera para dar efecto de relieve.
+============================================================ */
 .instructions-btn {
-  background: #b61d1d;
-  color: #fff;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background: #b61d1d;                        /* Color rojo principal */
+  color: #fff;                                /* Texto blanco para contraste */
+  border: none;                               /* Sin borde visible */
+  padding: 10px 24px;                         /* Espaciado interno */
+  border-radius: 8px;                         /* Bordes suaves */
+  font-weight: 700;                           /* Negrita para resaltar */
+  cursor: pointer;                            /* Indica interactividad */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);   /* Sombra inferior ligera */
 }
 
+
+/* ============================================================
+🔹 Efecto hover del botón
+---------------------------------------------------------------
+Al pasar el cursor, se oscurece ligeramente el color y
+aumenta el tamaño para dar una respuesta visual inmediata.
+============================================================ */
 .instructions-btn:hover {
-  background: #a61a1a;
-  transform: scale(1.05);
+  background: #a61a1a;     /* Tono más oscuro en hover */
+  transform: scale(1.05);  /* Ligero agrandamiento */
 }

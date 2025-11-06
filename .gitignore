@@ -1,15 +1,15 @@
-# 🧩 Node & dependencies
+# Node & dependencies
 node_modules/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# 🏗️ Build output
+# Build output
 dist/
 dist-ssr/
 *.local
 
-# 🧾 Logs
+# Logs
 logs/
 *.log
 npm-debug.log*
@@ -18,14 +18,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# ⚙️ Environment files
+# Environment files
 .env
 .env.local
 .env.development
 .env.production
 .env.test
 
-# 🧠 Editor & system files
+# Editor & system files
 .vscode/
 .idea/
 .DS_Store
@@ -36,13 +36,13 @@ Thumbs.db
 *.sln
 *.sw?
 
-# ⚡ TypeScript build info
+# TypeScript build info
 *.tsbuildinfo
 
-# 📱 Optional: Ionic / Capacitor builds (por si luego haces app móvil)
+# Optional: Ionic / Capacitor builds (por si luego haces app móvil)
 android/
 ios/
 
-# 🔒 Other cache folders
+# Other cache folders
 .cache/
 .eslintcache

@@ -1,45 +1,92 @@
+/* ============================================================
+InstructionsPanel.css — Estilos del panel de instrucciones
+===============================================================
+Este módulo define el estilo visual del panel desplegable
+que muestra las instrucciones paso a paso del uso del OCR.
+Incluye:
+  - Panel principal con sombra y transiciones
+  - Título y pasos numerados
+  - Consejos o tips finales
+  - Ajustes responsivos
+============================================================ */
+
+
+/* ============================================================
+Panel principal de instrucciones
+---------------------------------------------------------------
+Contenedor visual del bloque que incluye los pasos y consejos.
+============================================================ */
 .instructions-panel {
-  border-radius: 12px;
-  padding: 16px 20px;
-  margin-top: 10px;
-  line-height: 1.5;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease-in-out;
+  border-radius: 12px;                           /* Bordes redondeados */
+  padding: 16px 20px;                            /* Espaciado interno */
+  margin-top: 10px;                              /* Separación superior */
+  line-height: 1.5;                              /* Altura de línea legible */
+  overflow: hidden;                              /* Oculta contenido que se desborde */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);    /* Sombra sutil */
+  transition: all 0.3s ease-in-out;              /* Animación suave al mostrar/ocultar */
 }
 
+
+/* ============================================================
+Título principal del bloque
+---------------------------------------------------------------
+Texto de encabezado o título “Instrucciones” o similar.
+============================================================ */
 .instructions-title {
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: 700;    /* Negrita para destacar el título */
 }
 
+
+/* ============================================================
+Contenedor de pasos principales
+---------------------------------------------------------------
+Bloque donde se listan los pasos numerados o explicativos.
+============================================================ */
 .instructions-steps {
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+
+/* ============================================================
+Lista detallada de instrucciones
+---------------------------------------------------------------
+Estilo para listas con viñetas (círculos).
+============================================================ */
 .instructions-list {
-  margin-left: 30px;
-  list-style-type: circle;
+  margin-left: 30px;       /* Desplazamiento para alineación de viñetas */
+  list-style-type: circle; /* Viñeta circular */
   margin-bottom: 10px;
 }
 
+
+/* ============================================================
+Tip o consejo adicional
+---------------------------------------------------------------
+Texto final en cursiva para remarcar recomendaciones o avisos.
+============================================================ */
 .instructions-tip {
-  font-style: italic;
+  font-style: italic;    /* Texto en cursiva */
   font-size: 14px;
   margin-top: 8px;
-  opacity: 0.8;
+  opacity: 0.8;          /* Ligera transparencia para suavizar el tono */
 }
 
-/* Responsive mejora */
+
+/* ============================================================
+Modo responsivo
+---------------------------------------------------------------
+Ajusta el tamaño del texto y padding en pantallas pequeñas.
+============================================================ */
 @media (max-width: 768px) {
   .instructions-panel {
-    padding: 14px 16px;
-    font-size: 15px;
+    padding: 14px 16px;  /* Reduce el espacio interno */
+    font-size: 15px;     /* Texto más pequeño */
   }
 
   .instructions-title {
-    font-size: 1rem;
+    font-size: 1rem;     /* Tamaño ajustado del título */
   }
 }

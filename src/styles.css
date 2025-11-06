@@ -1,49 +1,96 @@
+/* ============================================================
+styles.css — Estilos globales del OCR Extractor Pro
+===============================================================
+Este archivo define la base visual común para toda la aplicación.
+Incluye:
+  - Reset y box-sizing universal
+  - Transiciones de color y fondo
+  - Tipografía base
+  - Estilos globales para botones
+  - Diseño de área de contenido (grid y responsive)
+============================================================ */
+
+
+/* ============================================================
+Reset y configuración general
+---------------------------------------------------------------
+Establece box-sizing universal y agrega transición suave
+para cambios de color o fondo al alternar entre temas.
+============================================================ */
 * {
-  box-sizing: border-box;
-  transition: background 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;  /* Todos los elementos respetan el padding y border */
+  transition: background 0.3s ease, color 0.3s ease; /* Transición global suave */
 }
 
+
+/* ============================================================
+Estilos base del body
+---------------------------------------------------------------
+Define los colores iniciales, tipografía y tamaño base
+para el documento. 
+El color inicial es el del tema oscuro por defecto.
+============================================================ */
 body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #0b1220; /* color base dark */
-  color: #e8eefc; /* texto base claro */
-  min-height: 100vh;
+  margin: 0;  /* Elimina márgenes por defecto */
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Fuente legible y moderna */
+  background-color: #0b1220;  /* Fondo oscuro por defecto */
+  color: #e8eefc;             /* Texto claro por defecto */
+  min-height: 100vh;          /* Garantiza altura mínima pantalla completa */
 }
 
+
+/* ============================================================
+Botones globales
+---------------------------------------------------------------
+Aplica una transición visual y cursor pointer a todos los botones.
+============================================================ */
 button {
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  cursor: pointer;  /* Muestra mano al pasar sobre botones */
+  transition: all 0.2s ease-in-out; /* Transición general para hover o focus */
 }
 
-/* === Responsive global para el layout principal === */
+
+/* ============================================================
+Layout principal (.content-area)
+---------------------------------------------------------------
+Área principal del contenido de la aplicación, que organiza
+la vista previa de imagen y el texto extraído en dos columnas.
+============================================================ */
 .content-area {
-  display: grid;
-  gap: 20px;
-  margin-top: 20px;
-  grid-template-columns: 1fr 1fr;
+  display: grid;                       /* Diseño en cuadrícula */
+  gap: 20px;                           /* Separación entre columnas */
+  margin-top: 20px;                    /* Espacio superior respecto a botones */
+  grid-template-columns: 1fr 1fr;      /* Dos columnas iguales */
 }
 
-/* 🔧 Responsive: pantallas pequeñas (móvil / tablet) */
+
+/* ============================================================
+Responsive global (pantallas pequeñas)
+---------------------------------------------------------------
+Adapta el layout principal para móviles y tablets (≤ 900px).
+Los paneles se apilan verticalmente y mantienen espaciado.
+============================================================ */
 @media (max-width: 900px) {
   .content-area {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
+    display: flex !important;              /* Cambia a diseño flexible */
+    flex-direction: column !important;     /* Apila los elementos verticalmente */
+    align-items: center !important;        /* Centra horizontalmente */
+    justify-content: flex-start !important;/* Comienza desde arriba */
     width: 100% !important;
     gap: 20px !important;
-    overflow-y: auto !important;
+    overflow-y: auto !important;           /* Permite scroll si el contenido es largo */
   }
 
+  /* Limita el ancho máximo de los paneles en pantallas pequeñas */
   .content-area > * {
     width: 95% !important;
     max-width: 600px !important;
   }
 
+  /* Ajusta los textos largos o resultados OCR */
   textarea, pre {
-    font-size: 14px !important;
+    font-size: 14px !important;        /* Reduce ligeramente la fuente */
     width: 100% !important;
-    min-height: 300px !important;
+    min-height: 300px !important;      /* Mantiene legibilidad */
   }
 }

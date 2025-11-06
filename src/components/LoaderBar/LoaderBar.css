@@ -1,45 +1,85 @@
+/* ============================================================
+LoaderBar.css — Estilos de la barra de carga animada
+===============================================================
+Este módulo define la animación visual de la barra de progreso
+usada durante los procesos de OCR, subida de imágenes o tareas
+de espera.
+Incluye:
+  - Contenedor de la barra
+  - Barra interna animada
+  - Variantes para tema claro y oscuro
+  - Animación deslizante infinita
+============================================================ */
+
+
+/* ============================================================
+Contenedor principal de la barra
+---------------------------------------------------------------
+Define la forma externa y el espacio de la barra de carga.
+============================================================ */
 .loader-bar {
-  width: 100%;
-  height: 6px;
-  border-radius: 6px;
-  margin-top: 10px;
-  overflow: hidden;
-  position: relative;
+  width: 100%;               /* Ocupa todo el ancho disponible */
+  height: 6px;               /* Grosor de la barra */
+  border-radius: 6px;        /* Bordes redondeados */
+  margin-top: 10px;          /* Separación superior del contenido anterior */
+  overflow: hidden;          /* Oculta la parte de la animación que se sale del borde */
+  position: relative;        /* Base para posicionar el elemento animado interno */
 }
 
-/* Barra interna animada */
+
+/* ============================================================
+Barra interna animada
+---------------------------------------------------------------
+Representa la parte móvil del loader. Se desliza de izquierda
+a derecha de manera continua simulando progreso.
+============================================================ */
 .loader-bar-progress {
-  width: 40%;
+  width: 40%;                /* Ancho inicial de la barra móvil */
   height: 100%;
   position: absolute;
-  left: 0;
-  border-radius: 6px;
-  animation: slideBar 1.2s ease-in-out infinite;
+  left: 0;                   /* Punto inicial de la animación */
+  border-radius: 6px;        /* Bordes redondeados iguales al contenedor */
+  animation: slideBar 1.2s ease-in-out infinite; /* Ciclo continuo de animación */
 }
 
+
+/* ============================================================
+Variantes por tema
+---------------------------------------------------------------
+Aplica diferentes degradados según el modo (dark o light).
+============================================================ */
 .loader-bar-progress.dark {
   background: linear-gradient(90deg, #2563eb, #60a5fa);
+  /* Azul intenso → Azul claro */
 }
 
 .loader-bar-progress.light {
   background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  /* Azul brillante → Azul claro */
 }
 
-/* Animación */
+
+/* ============================================================
+Animación principal
+---------------------------------------------------------------
+Crea el efecto deslizante horizontal de la barra animada.
+============================================================ */
 @keyframes slideBar {
   0% {
-    left: -40%;
+    left: -40%;     /* Inicia fuera del contenedor */
     width: 40%;
-    opacity: 0.7;
+    opacity: 0.7;   /* Más tenue al inicio */
   }
+
   50% {
-    left: 20%;
-    width: 60%;
-    opacity: 1;
+    left: 20%;      /* Avanza hacia el centro */
+    width: 60%;     /* Se ensancha para simular aceleración */
+    opacity: 1;     /* Máxima visibilidad */
   }
+
   100% {
-    left: 100%;
+    left: 100%;     /* Sale por el lado derecho */
     width: 40%;
-    opacity: 0.7;
+    opacity: 0.7;   /* Vuelve a ser tenue */
   }
 }

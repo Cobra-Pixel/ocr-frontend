@@ -1,21 +1,56 @@
+/* ============================================================
+Footer.css — Estilos del pie de página (footer)
+===============================================================
+Define la presentación del pie de página de la interfaz.
+Incluye alineación, espaciado, tipografía y efectos de hover.
+============================================================ */
+
+
+/* ============================================================
+Contenedor principal del footer
+---------------------------------------------------------------
+Centrado y con tono semitransparente, para que no distraiga
+del contenido principal. Incluye padding vertical y separación
+con respecto al resto de la página.
+============================================================ */
 .footer {
-  text-align: center;
-  opacity: 0.8;
-  font-size: 14px;
-  padding: 20px 0;
-  margin-top: 40px;
-  line-height: 1.5;
+  text-align: center;    /* Centra el contenido horizontalmente */
+  opacity: 0.8;          /* Ligera transparencia para un tono suave */
+  font-size: 14px;       /* Tamaño de texto discreto */
+  padding: 20px 0;       /* Espaciado arriba y abajo */
+  margin-top: 40px;      /* Separación respecto al contenido superior */
+  line-height: 1.5;      /* Altura de línea agradable a la lectura */
 }
 
+
+/* ============================================================
+Párrafos dentro del footer
+---------------------------------------------------------------
+Elimina márgenes por defecto y mantiene espaciado controlado.
+============================================================ */
 .footer p {
-  margin: 4px 0;
+  margin: 4px 0;         /* Espaciado pequeño entre líneas */
 }
 
+
+/* ============================================================
+Texto resaltado (<strong>)
+---------------------------------------------------------------
+Aplica un color distintivo a elementos importantes dentro
+del footer, como el nombre del proyecto o autor.
+============================================================ */
 .footer strong {
-  color: #ff6464;
+  color: #ff6464;        /* Tono rojo suave */
 }
 
+
+/* ============================================================
+Efecto hover sobre texto resaltado
+---------------------------------------------------------------
+Cambia el color del texto destacado al pasar el cursor,
+añadiendo una transición suave para un toque dinámico.
+============================================================ */
 .footer:hover strong {
-  color: #ff8585;
+  color: #ff8585;        /* Rojo ligeramente más claro */
   transition: color 0.3s ease;
 }
